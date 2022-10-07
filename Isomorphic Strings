@@ -1,0 +1,17 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        h1={}
+        h2={}
+        for i,j in zip(s,t):
+            #if i not in h1:
+            h1[i]=j
+            #if j not in h2:
+            h2[j]=i
+            # else:
+            #     if h1.get(i)!=j or h2.get(j)!=i :
+            #         return False 
+        for i,j in zip(s,t):
+            if h1.get(i)!=j or h2.get(j)!=i:
+                return False
+        
+        return True
